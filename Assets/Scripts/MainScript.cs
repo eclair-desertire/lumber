@@ -37,6 +37,10 @@ public class MainScript : MonoBehaviour
     void attack()
     {
         AxeAnimator.SetBool("Click", true);
+        Invoke("disabler", 1f);
+    }
+    void disabler()
+    {
         AxeAnimator.SetBool("Click", false);
     }
 }
