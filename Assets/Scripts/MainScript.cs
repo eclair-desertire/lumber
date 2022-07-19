@@ -16,6 +16,9 @@ public class MainScript : MonoBehaviour
     [SerializeField]
     private int money = 100;
 
+
+    public Animator AxeAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,15 @@ public class MainScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            attack();
+        }
+    }
+
+    void attack()
+    {
+        AxeAnimator.SetBool("Click", true);
+        AxeAnimator.SetBool("Click", false);
     }
 }

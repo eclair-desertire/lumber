@@ -5274,6 +5274,8 @@ MonoBehaviour:
   axes: []
   score: 0
   axe: 1
+  money: 100
+  AxeAnimator: {fileID: 214084311}
 --- !u!1001 &1551926037
 PrefabInstance:
   m_ObjectHideFlags: 0
