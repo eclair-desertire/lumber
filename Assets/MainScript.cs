@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class MainScript : MonoBehaviour
 {
+    public List<GameObject> trees;
+    public List<GameObject> axes;
+
+    public int score = 0;
+    public int axe = 1;
+
     // Start is called before the first frame update
     void Start()
     {
