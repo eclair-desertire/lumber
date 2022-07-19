@@ -26,12 +26,17 @@ public class MainScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            attack();
+            if (!AxeAnimator.GetBool("Click"))
+            {
+                attack();
+            }
+            
         }
+        Debug.Log(AxeAnimator.GetBool("Click"));
     }
 
     void attack()
