@@ -8,15 +8,6 @@ using System;
 public class MainScript : MonoBehaviour
 {
 
-
-    [SerializeField]
-    private int score = 0;
-
-
-    [SerializeField]
-    private int money = 100;
-
-
     public List<Animator> AxeAnimator;
 
 
@@ -31,7 +22,7 @@ public class MainScript : MonoBehaviour
     public List<GameObject> axes;
     public int currentAxe = 0;
     public int timesFixed = 0;
-    public List<AxeScriptableObject> AxeScriptableObject;
+    public List<AxeScriptableObject> AxeScriptableObjectList;
 
     public Image fillAmount;
 
@@ -77,19 +68,20 @@ public class MainScript : MonoBehaviour
     }
     void initVariables()
     {
-        priceToFix = AxeScriptableObject[currentAxe].price / 2;
+        priceToFix = AxeScriptableObjectList[currentAxe].price / 2;
+
     }
     void checkCapacity() {
-        float currentAmountInProcent = (1f * (float)AxeScriptableObject[currentAxe].currentCapacity) / (float)AxeScriptableObject[currentAxe].maxCapacity;
+        float currentAmountInProcent = (1f * (float)AxeScriptableObjectList[currentAxe].currentCapacity) / (float)AxeScriptableObjectList[currentAxe].maxCapacity;
         fillAmount.fillAmount = currentAmountInProcent;
     }
 
     void attack()
     {
-        if (AxeScriptableObject[currentAxe].currentCapacity>0) {
+        if (AxeScriptableObjectList[currentAxe].currentCapacity>0) {
             AxeAnimator[currentAxe].SetBool("Click", true);
             Invoke("playAudio", 0.3f);
-            AxeScriptableObject[currentAxe].currentCapacity -= 1;
+            AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
             scorettx += 1;
             score_text.text = "Score: " + scorettx.ToString();
             Invoke("disabler", 1f);
@@ -105,32 +97,43 @@ public class MainScript : MonoBehaviour
         audioSource.Play();
     }
 
-    void FixAxe()
+    public void FixAxe()
     {
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObject[currentAxe].price / 2);
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 2);
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
-                AxeScriptableObject[currentAxe].currentCapacity = AxeScriptableObject[currentAxe].maxCapacity;
+                AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
                 timesFixed += 1;
             }
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObject[currentAxe].price / 2) + (timesFixed * 10));
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 2) + (timesFixed * 10));
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
-                AxeScriptableObject[currentAxe].currentCapacity = AxeScriptableObject[currentAxe].maxCapacity;
+                AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
                 timesFixed += 1;
             }
 
         }
     }
-    void updateAxe()
+    public void updateAxe()
     {
 
+    }
+    public void ResetAllVars()
+    {
+        scorettx = 0;
+        currentAxe = 0;
+        timesFixed = 0;
+        initVariables();
+        foreach(AxeScriptableObject a in AxeScriptableObjectList)
+        {
+            a.currentCapacity = a.maxCapacity;
+        }
     }
 }
