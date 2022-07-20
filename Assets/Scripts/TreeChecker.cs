@@ -6,8 +6,9 @@ public class TreeChecker : MonoBehaviour
 {
     public AudioSource audioSource;
   
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
+        Debug.Log("ENTERED");
         audioSource.Play();
     }
 }
