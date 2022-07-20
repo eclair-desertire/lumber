@@ -23,6 +23,8 @@ public class MainScript : MonoBehaviour
     public AudioSource audioSource;
 
     public TMP_Text score_text;
+    public TMP_Text FixAxeButton;
+    public TMP_Text UpdateAxeButton;
 
     public int scorettx = 0;
 
@@ -33,10 +35,19 @@ public class MainScript : MonoBehaviour
 
     public Image fillAmount;
 
+    public int priceToFix=0;
+
+
     private void FixedUpdate()
     {
         checkCapacity();
         checkAxes();
+        fillbuttons();
+    }
+
+    private void fillbuttons()
+    {
+        FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
     }
 
     private void checkAxes()
@@ -49,7 +60,7 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        initVariables();
     }
 
     // Update is called once per frame
@@ -63,6 +74,10 @@ public class MainScript : MonoBehaviour
             }
             
         }
+    }
+    void initVariables()
+    {
+        priceToFix = AxeScriptableObject[currentAxe].price / 2;
     }
     void checkCapacity() {
         float currentAmountInProcent = (1f * (float)AxeScriptableObject[currentAxe].currentCapacity) / (float)AxeScriptableObject[currentAxe].maxCapacity;
@@ -88,5 +103,34 @@ public class MainScript : MonoBehaviour
     {
         Debug.Log("PLAYED");
         audioSource.Play();
+    }
+
+    void FixAxe()
+    {
+        if (timesFixed == 0)
+        {
+            priceToFix = (int)(AxeScriptableObject[currentAxe].price / 2);
+            if (scorettx >= priceToFix)
+            {
+                scorettx -= priceToFix;
+                AxeScriptableObject[currentAxe].currentCapacity = AxeScriptableObject[currentAxe].maxCapacity;
+                timesFixed += 1;
+            }
+        }
+        else
+        {
+            priceToFix = ((int)(AxeScriptableObject[currentAxe].price / 2) + (timesFixed * 10));
+            if (scorettx >= priceToFix)
+            {
+                scorettx -= priceToFix;
+                AxeScriptableObject[currentAxe].currentCapacity = AxeScriptableObject[currentAxe].maxCapacity;
+                timesFixed += 1;
+            }
+
+        }
+    }
+    void updateAxe()
+    {
+
     }
 }

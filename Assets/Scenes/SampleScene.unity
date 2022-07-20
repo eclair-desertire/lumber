@@ -5205,6 +5205,8 @@ MonoBehaviour:
   - {fileID: 1416902738}
   audioSource: {fileID: 1549842372}
   score_text: {fileID: 1260650864}
+  FixAxeButton: {fileID: 831287401}
+  UpdateAxeButton: {fileID: 0}
   scorettx: 0
   axes:
   - {fileID: 214084310}
@@ -5215,6 +5217,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e39f3d1c38fd4f12879ba04ac9c6513, type: 2}
   - {fileID: 0}
   fillAmount: {fileID: 1694739694}
+  priceToFix: 0
 --- !u!82 &1549842372
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5502,7 +5505,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694739692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 57}
+  m_LocalPosition: {x: 0, y: 0, z: 51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5511,8 +5514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295, y: -481}
-  m_SizeDelta: {x: 100, y: 200}
+  m_AnchoredPosition: {x: -295, y: -430.6}
+  m_SizeDelta: {x: 100, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694739694
 MonoBehaviour:
