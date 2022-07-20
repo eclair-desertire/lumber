@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class MainScript : MonoBehaviour
 {
-    public List<GameObject> trees;
-    public List<GameObject> axes;
+
 
     [SerializeField]
     private int score = 0;
 
-    [SerializeField]
-    private int axe = 1;
 
     [SerializeField]
     private int money = 100;
