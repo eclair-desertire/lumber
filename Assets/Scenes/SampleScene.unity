@@ -5369,8 +5369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f6d4715fe244ecb95867e2aa321f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  money: 100
   AxeAnimator:
   - {fileID: 214084311}
   - {fileID: 1416902738}
@@ -5384,7 +5382,7 @@ MonoBehaviour:
   - {fileID: 0}
   currentAxe: 0
   timesFixed: 0
-  AxeScriptableObject:
+  AxeScriptableObjectList:
   - {fileID: 11400000, guid: 9e39f3d1c38fd4f12879ba04ac9c6513, type: 2}
   - {fileID: 0}
   fillAmount: {fileID: 1694739694}
