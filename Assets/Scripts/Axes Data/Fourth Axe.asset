@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 032a5cf2a90604d09985556b38c16fa8, type: 3}
-  m_Name: FirstAxe
+  m_Name: Fourth Axe
   m_EditorClassIdentifier: 
-  maxCapacity: 50
-  currentCapacity: 50
-  price: 50
+  maxCapacity: 120
+  currentCapacity: 120
+  price: 90
   attack: 10

@@ -1133,7 +1133,7 @@ PrefabInstance:
     - target: {fileID: 6454499749934941597, guid: 5c266243bdd7a6a4c8d069957f6bff9f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6454499749935438269, guid: 5c266243bdd7a6a4c8d069957f6bff9f,
         type: 3}
@@ -1274,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 1025626756010699228, guid: 59a2a1cda6f825b42a683b616f6077c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a2a1cda6f825b42a683b616f6077c6, type: 3}
@@ -2621,7 +2621,7 @@ PrefabInstance:
     - target: {fileID: 8203073568141072114, guid: 6cd1ac9652a50da4485a86492f47c63d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8835212951578315848, guid: 6cd1ac9652a50da4485a86492f47c63d,
         type: 3}
@@ -2878,7 +2878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1160154057661508, guid: e9f59d77b57d68e4199b7d15367aaa7c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4889375790027402, guid: e9f59d77b57d68e4199b7d15367aaa7c, type: 3}
       propertyPath: m_RootOrder
@@ -4773,7 +4773,7 @@ PrefabInstance:
     - target: {fileID: 4205933518059535254, guid: 71cd27265c9fe3547a890141dc28197e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71cd27265c9fe3547a890141dc28197e, type: 3}
@@ -5354,7 +5354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012568368362, guid: 9b663bb687068904395cfe31bb4dee7f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010387787038, guid: 9b663bb687068904395cfe31bb4dee7f, type: 3}
       propertyPath: m_RootOrder
@@ -5686,12 +5686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f6d4715fe244ecb95867e2aa321f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AxeAnimator:
-  - {fileID: 1475632708}
+  AxeAnimator: {fileID: 1475632708}
   audioSource: {fileID: 1549842372}
   score_text: {fileID: 1260650864}
   FixAxeButton: {fileID: 831287401}
-  UpdateAxeButton: {fileID: 0}
+  UpdateAxeButton: {fileID: 606599852}
   scorettx: 0
   axes:
   - {fileID: 214084310}
@@ -5705,7 +5704,12 @@ MonoBehaviour:
   timesFixed: 0
   AxeScriptableObjectList:
   - {fileID: 11400000, guid: 9e39f3d1c38fd4f12879ba04ac9c6513, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8d298b7384b814a97bd068b1656faf05, type: 2}
+  - {fileID: 11400000, guid: 42741b15cd5fd4e63a5aa95cf3b40fbb, type: 2}
+  - {fileID: 11400000, guid: 798f0d5e9af9f4778ae9ade5a333088f, type: 2}
+  - {fileID: 11400000, guid: 08eb3ab91e53b42fe8a08d6b2f577104, type: 2}
+  - {fileID: 11400000, guid: f934a2ab0fa5643b2ad98ae3d739bf08, type: 2}
+  - {fileID: 11400000, guid: fae5413c6c0c6483e8833aab7c87a44d, type: 2}
   fillAmount: {fileID: 1694739694}
   priceToFix: 0
 --- !u!82 &1549842372
@@ -7003,7 +7007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878273237308662, guid: 0031543705b8c024c916caa648809017, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4104134117191692, guid: 0031543705b8c024c916caa648809017, type: 3}
       propertyPath: m_RootOrder

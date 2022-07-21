@@ -8,7 +8,7 @@ using System;
 public class MainScript : MonoBehaviour
 {
 
-    public List<Animator> AxeAnimator;
+    public Animator AxeAnimator;
 
 
     public AudioSource audioSource;
@@ -39,6 +39,14 @@ public class MainScript : MonoBehaviour
     private void fillbuttons()
     {
         FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
+        if (currentAxe < 6)
+        {
+            UpdateAxeButton.text = "Upgrade Axe:\n" + AxeScriptableObjectList[currentAxe + 1].price.ToString();
+        }
+        else
+        {
+            UpdateAxeButton.text = "NO AXES TO UPGRADE";
+        }
     }
 
     private void checkAxes()
@@ -59,7 +67,7 @@ public class MainScript : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            if (!AxeAnimator[currentAxe].GetBool("Click"))
+            if (!AxeAnimator.GetBool("Click"))
             {
                 attack();
             }
@@ -68,7 +76,7 @@ public class MainScript : MonoBehaviour
     }
     void initVariables()
     {
-        priceToFix = AxeScriptableObjectList[currentAxe].price / 2;
+        priceToFix = (AxeScriptableObjectList[currentAxe].price / 2)-5;
 
     }
     void checkCapacity() {
@@ -79,7 +87,7 @@ public class MainScript : MonoBehaviour
     void attack()
     {
         if (AxeScriptableObjectList[currentAxe].currentCapacity>0) {
-            AxeAnimator[currentAxe].SetBool("Click", true);
+            AxeAnimator.SetBool("Click", true);
             Invoke("playAudio", 0.15f);
             AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
             scorettx += 1;
@@ -89,7 +97,7 @@ public class MainScript : MonoBehaviour
     }
     void disabler()
     {
-        AxeAnimator[currentAxe].SetBool("Click", false);
+        AxeAnimator.SetBool("Click", false);
     }
     void playAudio()
     {
@@ -101,7 +109,7 @@ public class MainScript : MonoBehaviour
     {
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 2);
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 2)-5;
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -111,7 +119,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 2) + (timesFixed * 10));
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 2) + (timesFixed * 10))-5;
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -123,7 +131,19 @@ public class MainScript : MonoBehaviour
     }
     public void updateAxe()
     {
-
+        if (currentAxe < 6)
+        {
+            if (scorettx >= AxeScriptableObjectList[currentAxe + 1].price)
+            {
+                scorettx -= AxeScriptableObjectList[currentAxe + 1].price;
+                axes[currentAxe].SetActive(false);
+                currentAxe += 1;
+                axes[currentAxe].SetActive(true);
+                timesFixed = 0;
+                initVariables();
+            }
+        }
+        
     }
     public void ResetAllVars()
     {
