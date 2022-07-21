@@ -76,7 +76,7 @@ public class MainScript : MonoBehaviour
     }
     void initVariables()
     {
-        priceToFix = (AxeScriptableObjectList[currentAxe].price / 2)-5;
+        priceToFix = (AxeScriptableObjectList[currentAxe].price / 3);
 
     }
     void checkCapacity() {
@@ -109,7 +109,7 @@ public class MainScript : MonoBehaviour
     {
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 2)-5;
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3);
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -119,7 +119,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 2) + (timesFixed * 10))-5;
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 10));
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
