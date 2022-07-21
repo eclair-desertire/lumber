@@ -148,7 +148,9 @@ public class MainScript : MonoBehaviour
     public void ResetAllVars()
     {
         scorettx = 0;
+        axes[currentAxe].SetActive(false);
         currentAxe = 0;
+        axes[currentAxe].SetActive(true);
         timesFixed = 0;
         initVariables();
         foreach(AxeScriptableObject a in AxeScriptableObjectList)
