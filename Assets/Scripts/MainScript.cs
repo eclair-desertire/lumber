@@ -80,11 +80,11 @@ public class MainScript : MonoBehaviour
     {
         if (AxeScriptableObjectList[currentAxe].currentCapacity>0) {
             AxeAnimator[currentAxe].SetBool("Click", true);
-            Invoke("playAudio", 0.3f);
+            Invoke("playAudio", 0.15f);
             AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
             scorettx += 1;
             score_text.text = "Score: " + scorettx.ToString();
-            Invoke("disabler", 1f);
+            Invoke("disabler", 0.25f);
         }
     }
     void disabler()
