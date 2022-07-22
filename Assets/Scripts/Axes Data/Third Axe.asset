@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCapacity: 100
   currentCapacity: 100
-  price: 65
+  price: 220
   attack: 10

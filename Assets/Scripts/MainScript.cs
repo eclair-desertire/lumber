@@ -92,7 +92,7 @@ public class MainScript : MonoBehaviour
             AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
             scorettx += 1;
             score_text.text = "Score: " + scorettx.ToString();
-            Invoke("disabler", 0.25f);
+            Invoke("disabler", 0.08f);
         }
     }
     void disabler()
@@ -119,7 +119,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 10));
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8));
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
