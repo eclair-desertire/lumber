@@ -47,7 +47,7 @@ public class MainScript : MonoBehaviour
     {
         if (treeHP <= 0)
         {
-            treeHP = 50;
+            treeHP = UnityEngine.Random.Range(120, 500);
             if (currentTree >= 7)
             {
                 successSound.Play();
@@ -103,8 +103,8 @@ public class MainScript : MonoBehaviour
 
     private void initTreeHp()
     {
-        //treeHP = UnityEngine.Random.Range(200, 500);
-        treeHP = 50;
+        treeHP = UnityEngine.Random.Range(120, 500);
+
     }
 
     public void ClickButton()
