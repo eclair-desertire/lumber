@@ -50,6 +50,7 @@ public class MainScript : MonoBehaviour
         if (treeHP <= 0)
         {
             treeHP = UnityEngine.Random.Range(120, 500);
+            treeScore += 1;
             trees_choped.text = "Trees choped: " + treeScore.ToString();
             if (currentTree >= 7)
             {
