@@ -51,7 +51,7 @@ public class MainScript : MonoBehaviour
         {
             treeHP = UnityEngine.Random.Range(120, 500);
             treeScore += 1;
-            trees_choped.text = "Trees choped: " + treeScore.ToString();
+            trees_choped.text = "Choped: " + treeScore.ToString();
             if (currentTree >= 7)
             {
                 successSound.Play();
@@ -82,7 +82,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            UpdateAxeButton.text = "NO AXES TO UPGRADE";
+            UpdateAxeButton.text = "NO AXES";
         }
     }
 
@@ -153,28 +153,33 @@ public class MainScript : MonoBehaviour
 
     public void FixAxe()
     {
+
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3);
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 5);
+            FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
                 AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
                 timesFixed += 1;
+                score_text.text = "Score: " + scorettx.ToString();
             }
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8));
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 5) + (timesFixed * 8));
+            FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
                 AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
                 timesFixed += 1;
+                score_text.text = "Score: " + scorettx.ToString();
             }
 
         }
-        score_text.text = "Score: " + scorettx.ToString();
+        
     }
     public void updateAxe()
     {
