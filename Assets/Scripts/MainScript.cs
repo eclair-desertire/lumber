@@ -17,6 +17,7 @@ public class MainScript : MonoBehaviour
     public TMP_Text score_text;
     public TMP_Text FixAxeButton;
     public TMP_Text UpdateAxeButton;
+    public TMP_Text trees_choped;
 
     public int scorettx = 0;
 
@@ -32,6 +33,7 @@ public class MainScript : MonoBehaviour
     public int currentTree = 0;
     public List<GameObject> trees;
     public int treeHP=0;
+    public int treeScore=0;
 
     public ParticleSystem axeParticle;
     public ParticleSystem treeParticle;
@@ -48,6 +50,7 @@ public class MainScript : MonoBehaviour
         if (treeHP <= 0)
         {
             treeHP = UnityEngine.Random.Range(120, 500);
+            trees_choped.text = "Trees choped: " + treeScore.ToString();
             if (currentTree >= 7)
             {
                 successSound.Play();
@@ -103,7 +106,7 @@ public class MainScript : MonoBehaviour
 
     private void initTreeHp()
     {
-        treeHP = UnityEngine.Random.Range(120, 500);
+        treeHP = UnityEngine.Random.Range(120, 350);
 
     }
 
@@ -151,7 +154,7 @@ public class MainScript : MonoBehaviour
     {
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3)+10;
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3);
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -161,7 +164,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8))+10;
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8));
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -170,6 +173,7 @@ public class MainScript : MonoBehaviour
             }
 
         }
+        score_text.text = "Score: " + scorettx.ToString();
     }
     public void updateAxe()
     {

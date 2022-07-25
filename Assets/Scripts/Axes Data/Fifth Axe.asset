@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032a5cf2a90604d09985556b38c16fa8, type: 3}
   m_Name: Fifth Axe
   m_EditorClassIdentifier: 
-  maxCapacity: 170
-  currentCapacity: 170
-  price: 500
+  maxCapacity: 300
+  currentCapacity: 300
+  price: 1080
   attack: 10
