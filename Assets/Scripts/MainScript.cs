@@ -11,7 +11,8 @@ public class MainScript : MonoBehaviour
     public Animator AxeAnimator;
 
 
-    public AudioSource audioSource;
+    public AudioSource chopSound;
+    public AudioSource successSound;
 
     public TMP_Text score_text;
     public TMP_Text FixAxeButton;
@@ -32,7 +33,8 @@ public class MainScript : MonoBehaviour
     public List<GameObject> trees;
     public int treeHP=0;
 
-
+    public ParticleSystem axeParticle;
+    public ParticleSystem treeParticle;
     private void FixedUpdate()
     {
         checkCapacity();
@@ -45,6 +47,8 @@ public class MainScript : MonoBehaviour
     {
         if (treeHP <= 0)
         {
+            successSound.Play();
+            treeParticle.Play();
             trees[currentTree].SetActive(false);
             currentTree += 1;
             trees[currentTree].SetActive(true);
@@ -89,16 +93,11 @@ public class MainScript : MonoBehaviour
         treeHP = 50;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ClickButton()
     {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (!AxeAnimator.GetBool("Click"))
         {
-            if (!AxeAnimator.GetBool("Click"))
-            {
-                attack();
-            }
-            
+            attack();
         }
     }
     void initVariables()
@@ -131,7 +130,7 @@ public class MainScript : MonoBehaviour
     void playAudio()
     {
         Debug.Log("PLAYED");
-        audioSource.Play();
+        chopSound.Play();
     }
 
     public void FixAxe()
@@ -164,6 +163,8 @@ public class MainScript : MonoBehaviour
         {
             if (scorettx >= AxeScriptableObjectList[currentAxe + 1].price)
             {
+                successSound.Play();
+                axeParticle.Play();
                 scorettx -= AxeScriptableObjectList[currentAxe + 1].price;
                 axes[currentAxe].SetActive(false);
                 currentAxe += 1;
