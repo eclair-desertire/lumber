@@ -47,12 +47,26 @@ public class MainScript : MonoBehaviour
     {
         if (treeHP <= 0)
         {
-            successSound.Play();
-            treeParticle.Play();
-            trees[currentTree].SetActive(false);
-            currentTree += 1;
-            trees[currentTree].SetActive(true);
+            treeHP = 50;
+            if (currentTree >= 7)
+            {
+                successSound.Play();
+                treeParticle.Play();
+                trees[currentTree].SetActive(false);
+                currentTree = 0;
+                trees[currentTree].SetActive(true);
+            }
+            else
+            {
+                successSound.Play();
+                treeParticle.Play();
+                trees[currentTree].SetActive(false);
+                currentTree += 1;
+                trees[currentTree].SetActive(true);
+            }
+            
         }
+        
     }
 
     private void fillbuttons()
