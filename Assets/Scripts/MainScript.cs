@@ -28,12 +28,27 @@ public class MainScript : MonoBehaviour
 
     public int priceToFix=0;
 
+    public int currentTree = 0;
+    public List<GameObject> trees;
+    public int treeHP=0;
+
 
     private void FixedUpdate()
     {
         checkCapacity();
         checkAxes();
         fillbuttons();
+        checkTree();
+    }
+
+    private void checkTree()
+    {
+        if (treeHP <= 0)
+        {
+            trees[currentTree].SetActive(false);
+            currentTree += 1;
+            trees[currentTree].SetActive(true);
+        }
     }
 
     private void fillbuttons()
@@ -51,8 +66,13 @@ public class MainScript : MonoBehaviour
 
     private void checkAxes()
     {
+        //Debug.Log(Random.RandomRange(100f, 500f));
         if (!axes[currentAxe].activeSelf) {
             axes[currentAxe].SetActive(true);
+        }
+        if (!trees[currentTree].activeSelf)
+        {
+            trees[currentTree].SetActive(true);
         }
     }
 
@@ -60,6 +80,13 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         initVariables();
+        initTreeHp();
+    }
+
+    private void initTreeHp()
+    {
+        //treeHP = UnityEngine.Random.Range(200, 500);
+        treeHP = 50;
     }
 
     // Update is called once per frame
@@ -76,6 +103,7 @@ public class MainScript : MonoBehaviour
     }
     void initVariables()
     {
+        
         priceToFix = (AxeScriptableObjectList[currentAxe].price / 3);
 
     }
@@ -90,7 +118,8 @@ public class MainScript : MonoBehaviour
             AxeAnimator.SetBool("Click", true);
             Invoke("playAudio", 0.15f);
             AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
-            scorettx += 1;
+            scorettx += currentAxe+1;
+            treeHP -= currentAxe + 1;
             score_text.text = "Score: " + scorettx.ToString();
             Invoke("disabler", 0.08f);
         }
@@ -109,7 +138,7 @@ public class MainScript : MonoBehaviour
     {
         if (timesFixed == 0)
         {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3);
+            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 3)+10;
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -119,7 +148,7 @@ public class MainScript : MonoBehaviour
         }
         else
         {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8));
+            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 3) + (timesFixed * 8))+10;
             if (scorettx >= priceToFix)
             {
                 scorettx -= priceToFix;
@@ -149,8 +178,11 @@ public class MainScript : MonoBehaviour
     {
         scorettx = 0;
         axes[currentAxe].SetActive(false);
+        trees[currentTree].SetActive(false);
         currentAxe = 0;
+        currentTree = 0;
         axes[currentAxe].SetActive(true);
+        trees[currentTree].SetActive(true);
         timesFixed = 0;
         initVariables();
         foreach(AxeScriptableObject a in AxeScriptableObjectList)
