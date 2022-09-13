@@ -7,6 +7,7 @@ using System;
 
 public class MainScript : MonoBehaviour
 {
+    private int[] axehps;
 
     public Animator AxeAnimator;
 
@@ -14,8 +15,6 @@ public class MainScript : MonoBehaviour
     public AudioSource chopSound;
     public AudioSource successSound;
 
-    public TMP_Text score_text;
-    public TMP_Text FixAxeButton;
     public TMP_Text UpdateAxeButton;
     public TMP_Text trees_choped;
 
@@ -23,12 +22,6 @@ public class MainScript : MonoBehaviour
 
     public List<GameObject> axes;
     public int currentAxe = 0;
-    public int timesFixed = 0;
-    public List<AxeScriptableObject> AxeScriptableObjectList;
-
-    public Image fillAmount;
-
-    public int priceToFix=0;
 
     public int currentTree = 0;
     public List<GameObject> trees;
@@ -39,7 +32,6 @@ public class MainScript : MonoBehaviour
     public ParticleSystem treeParticle;
     private void FixedUpdate()
     {
-        checkCapacity();
         checkAxes();
         fillbuttons();
         checkTree();
@@ -47,9 +39,14 @@ public class MainScript : MonoBehaviour
 
     private void checkTree()
     {
+        Debug.Log("Tree HP: "+treeHP);
+        Debug.Log("Current AXE: "+ currentAxe);
+        Debug.Log("Current Tree: "+currentTree);
+        Debug.Log("AXEHPS: " + axehps[currentAxe]);
+        Debug.Log("AXEHPS NEXT: " + axehps[currentAxe+1]);
         if (treeHP <= 0)
         {
-            treeHP = UnityEngine.Random.Range(120, 500);
+            treeHP = UnityEngine.Random.Range(100, 250);
             treeScore += 1;
             trees_choped.text = "Choped: " + treeScore.ToString();
             if (currentTree >= 7)
@@ -65,7 +62,7 @@ public class MainScript : MonoBehaviour
                 successSound.Play();
                 treeParticle.Play();
                 trees[currentTree].SetActive(false);
-                currentTree += 1;
+                currentTree += 2;
                 trees[currentTree].SetActive(true);
             }
             
@@ -75,10 +72,9 @@ public class MainScript : MonoBehaviour
 
     private void fillbuttons()
     {
-        FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
-        if (currentAxe < 6)
+        if (currentAxe < 7)
         {
-            UpdateAxeButton.text = "Upgrade Axe:\n" + AxeScriptableObjectList[currentAxe + 1].price.ToString();
+            UpdateAxeButton.text = "Upgrade Axe:\n"+ axehps[currentAxe+1].ToString();// Инициализировать цены и их генератор;
         }
         else
         {
@@ -88,7 +84,6 @@ public class MainScript : MonoBehaviour
 
     private void checkAxes()
     {
-        //Debug.Log(Random.RandomRange(100f, 500f));
         if (!axes[currentAxe].activeSelf) {
             axes[currentAxe].SetActive(true);
         }
@@ -101,13 +96,13 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initVariables();
         initTreeHp();
     }
 
     private void initTreeHp()
     {
-        treeHP = UnityEngine.Random.Range(120, 350);
+        axehps = new int[] { 0,50, 120, 300, 500, 800, 1000, 1500 };
+        treeHP = UnityEngine.Random.Range(70, 140);
 
     }
 
@@ -118,28 +113,12 @@ public class MainScript : MonoBehaviour
             attack();
         }
     }
-    void initVariables()
-    {
-        
-        priceToFix = (AxeScriptableObjectList[currentAxe].price / 3);
-
-    }
-    void checkCapacity() {
-        float currentAmountInProcent = (1f * (float)AxeScriptableObjectList[currentAxe].currentCapacity) / (float)AxeScriptableObjectList[currentAxe].maxCapacity;
-        fillAmount.fillAmount = currentAmountInProcent;
-    }
-
     void attack()
     {
-        if (AxeScriptableObjectList[currentAxe].currentCapacity>0) {
             AxeAnimator.SetBool("Click", true);
             Invoke("playAudio", 0.15f);
-            AxeScriptableObjectList[currentAxe].currentCapacity -= 1;
-            scorettx += currentAxe+1;
             treeHP -= currentAxe + 1;
-            score_text.text = "Score: " + scorettx.ToString();
             Invoke("disabler", 0.08f);
-        }
     }
     void disabler()
     {
@@ -151,50 +130,18 @@ public class MainScript : MonoBehaviour
         chopSound.Play();
     }
 
-    public void FixAxe()
-    {
-
-        if (timesFixed == 0)
-        {
-            priceToFix = (int)(AxeScriptableObjectList[currentAxe].price / 5);
-            FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
-            if (scorettx >= priceToFix)
-            {
-                scorettx -= priceToFix;
-                AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
-                timesFixed += 1;
-                score_text.text = "Score: " + scorettx.ToString();
-            }
-        }
-        else
-        {
-            priceToFix = ((int)(AxeScriptableObjectList[currentAxe].price / 5) + (timesFixed * 8));
-            FixAxeButton.text = "Fix Axe:\n" + priceToFix.ToString();
-            if (scorettx >= priceToFix)
-            {
-                scorettx -= priceToFix;
-                AxeScriptableObjectList[currentAxe].currentCapacity = AxeScriptableObjectList[currentAxe].maxCapacity;
-                timesFixed += 1;
-                score_text.text = "Score: " + scorettx.ToString();
-            }
-
-        }
-        
-    }
     public void updateAxe()
     {
-        if (currentAxe < 6)
+        if (currentAxe < 7)
         {
-            if (scorettx >= AxeScriptableObjectList[currentAxe + 1].price)
+            if (scorettx >= axehps[currentAxe + 1])
             {
                 successSound.Play();
                 axeParticle.Play();
-                scorettx -= AxeScriptableObjectList[currentAxe + 1].price;
+                scorettx -= axehps[currentAxe + 1];
                 axes[currentAxe].SetActive(false);
                 currentAxe += 1;
                 axes[currentAxe].SetActive(true);
-                timesFixed = 0;
-                initVariables();
             }
         }
         
@@ -208,11 +155,5 @@ public class MainScript : MonoBehaviour
         currentTree = 0;
         axes[currentAxe].SetActive(true);
         trees[currentTree].SetActive(true);
-        timesFixed = 0;
-        initVariables();
-        foreach(AxeScriptableObject a in AxeScriptableObjectList)
-        {
-            a.currentCapacity = a.maxCapacity;
-        }
     }
 }
