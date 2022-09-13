@@ -46,7 +46,7 @@ public class MainScript : MonoBehaviour
         Debug.Log("AXEHPS NEXT: " + axehps[currentAxe+1]);
         if (treeHP <= 0)
         {
-            treeHP = UnityEngine.Random.Range(100, 250);
+            treeHP = UnityEngine.Random.Range(100, 180);
             treeScore += 1;
             trees_choped.text = "Choped: " + treeScore.ToString();
             if (currentTree >= 7)
@@ -101,8 +101,8 @@ public class MainScript : MonoBehaviour
 
     private void initTreeHp()
     {
-        axehps = new int[] { 0,50, 120, 300, 500, 800, 1000, 1500 };
-        treeHP = UnityEngine.Random.Range(70, 140);
+        axehps = new int[] { 0,10, 50, 100, 150, 200, 350, 500 };
+        treeHP = UnityEngine.Random.Range(40, 50);
 
     }
 
