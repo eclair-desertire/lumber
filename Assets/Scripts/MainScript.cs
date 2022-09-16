@@ -46,9 +46,9 @@ public class MainScript : MonoBehaviour
         Debug.Log("AXEHPS NEXT: " + axehps[currentAxe+1]);
         if (treeHP <= 0)
         {
-            treeHP = UnityEngine.Random.Range(100, 180);
+            treeHP = UnityEngine.Random.Range(40, 55);
             treeScore += 1;
-            trees_choped.text = "Choped: " + treeScore.ToString();
+            trees_choped.text = "Score: " + treeScore.ToString();
             if (currentTree >= 7)
             {
                 successSound.Play();
@@ -62,7 +62,7 @@ public class MainScript : MonoBehaviour
                 successSound.Play();
                 treeParticle.Play();
                 trees[currentTree].SetActive(false);
-                currentTree += 2;
+                currentTree += 1;
                 trees[currentTree].SetActive(true);
             }
             
@@ -74,7 +74,7 @@ public class MainScript : MonoBehaviour
     {
         if (currentAxe < 7)
         {
-            UpdateAxeButton.text = "Upgrade Axe:\n"+ axehps[currentAxe+1].ToString();// Инициализировать цены и их генератор;
+            UpdateAxeButton.text = axehps[currentAxe+1].ToString();// Инициализировать цены и их генератор;
         }
         else
         {
@@ -101,7 +101,7 @@ public class MainScript : MonoBehaviour
 
     private void initTreeHp()
     {
-        axehps = new int[] { 0,10, 50, 100, 150, 200, 350, 500 };
+        axehps = new int[] { 0,10, 30, 80, 150, 250, 400, 700 };
         treeHP = UnityEngine.Random.Range(40, 50);
 
     }
@@ -134,11 +134,11 @@ public class MainScript : MonoBehaviour
     {
         if (currentAxe < 7)
         {
-            if (scorettx >= axehps[currentAxe + 1])
+            if (treeScore >= axehps[currentAxe + 1])
             {
                 successSound.Play();
                 axeParticle.Play();
-                scorettx -= axehps[currentAxe + 1];
+                treeScore -= axehps[currentAxe + 1];
                 axes[currentAxe].SetActive(false);
                 currentAxe += 1;
                 axes[currentAxe].SetActive(true);
@@ -151,6 +151,7 @@ public class MainScript : MonoBehaviour
         scorettx = 0;
         axes[currentAxe].SetActive(false);
         trees[currentTree].SetActive(false);
+        treeScore = 0;
         currentAxe = 0;
         currentTree = 0;
         axes[currentAxe].SetActive(true);
