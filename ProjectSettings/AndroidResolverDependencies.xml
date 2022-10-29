@@ -77,7 +77,7 @@
     <file>Assets/Plugins/Android/com.google.guava.guava-27.1-android.jar</file>
     <file>Assets/Plugins/Android/com.google.guava.listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</file>
     <file>Assets/Plugins/Android/com.google.protobuf.protobuf-javalite-3.19.3.jar</file>
-    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.2.4.1.aar</file>
+    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.2.5.aar</file>
     <file>Assets/Plugins/Android/com.mbridge.msdk.oversea.interstitialvideo-16.1.31.aar</file>
     <file>Assets/Plugins/Android/com.mbridge.msdk.oversea.mbbid-16.1.31.aar</file>
     <file>Assets/Plugins/Android/com.mbridge.msdk.oversea.mbjscommon-16.1.31.aar</file>
@@ -107,7 +107,7 @@
     <file>Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-common-1.5.31.jar</file>
   </files>
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
     <setting name="bundleId" value="com.Duizer.lumber" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />

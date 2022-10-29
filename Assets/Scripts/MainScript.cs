@@ -11,6 +11,10 @@ public class MainScript : MonoBehaviour
 
     public Animator AxeAnimator;
 
+    public GameObject WinterTerrain;
+    public GameObject StandardTerrain;
+    public GameObject RainPart;
+    public GameObject SnowPart; 
 
     public AudioSource chopSound;
     public AudioSource successSound;
@@ -30,6 +34,7 @@ public class MainScript : MonoBehaviour
 
     public ParticleSystem axeParticle;
     public ParticleSystem treeParticle;
+
     private void FixedUpdate()
     {
         checkAxes();
@@ -46,9 +51,10 @@ public class MainScript : MonoBehaviour
         Debug.Log("AXEHPS NEXT: " + axehps[currentAxe+1]);
         if (treeHP <= 0)
         {
-            treeHP = UnityEngine.Random.Range(40, 55);
+            treeHP = UnityEngine.Random.Range(100, 200);
             treeScore += 1;
             trees_choped.text = "Score: " + treeScore.ToString();
+            occurency();
             if (currentTree >= 7)
             {
                 successSound.Play();
@@ -74,7 +80,7 @@ public class MainScript : MonoBehaviour
     {
         if (currentAxe < 7)
         {
-            UpdateAxeButton.text = axehps[currentAxe+1].ToString();// Инициализировать цены и их генератор;
+            UpdateAxeButton.text = axehps[currentAxe+1].ToString();// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ;
         }
         else
         {
@@ -102,7 +108,7 @@ public class MainScript : MonoBehaviour
     private void initTreeHp()
     {
         axehps = new int[] { 0,10, 30, 80, 150, 250, 400, 700 };
-        treeHP = UnityEngine.Random.Range(40, 50);
+        treeHP = UnityEngine.Random.Range(70, 120);
 
     }
 
@@ -156,5 +162,49 @@ public class MainScript : MonoBehaviour
         currentTree = 0;
         axes[currentAxe].SetActive(true);
         trees[currentTree].SetActive(true);
+    }
+    void occurency()
+    {
+        int i= UnityEngine.Random.Range(1, 10);
+        int j = UnityEngine.Random.Range(1, 3);
+        resetWeather();
+        resetAllenv();
+        occur(i, j);
+    }
+
+    void resetAllenv()
+    {
+        WinterTerrain.SetActive(false);
+        StandardTerrain.SetActive(false);
+    }
+
+    void resetWeather()
+    {
+        SnowPart.SetActive(false);
+        RainPart.SetActive(false);
+    }
+
+    void occur(int i, int j)
+    {
+        if (i %2== 0){
+            StandardTerrain.SetActive(true);
+        }
+        else if (i%2!=0)
+        {
+            WinterTerrain.SetActive(true);
+        }
+
+        if (j == 1)
+        {
+            resetWeather();
+        }
+        else if (j == 2)
+        {
+            SnowPart.SetActive(true);
+        }
+        else if (j == 3)
+        {
+            RainPart.SetActive(true);
+        }
     }
 }
