@@ -34,6 +34,7 @@ static const int32_t s_InvokerIndices[4] =
 	3504,
 	3504,
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_WindModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_WindModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_WindModule_CodeGenModule = 
 {
@@ -49,7 +50,7 @@ const Il2CppCodeGenModule g_UnityEngine_WindModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_WindModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

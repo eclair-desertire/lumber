@@ -3393,6 +3393,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[15] =
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_IList_1_tC0603C37FBBDECAAC48321F519DEAAEAF7A86891 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_IList_1_get_Item_mDD71279485FE4A8CCC1A10877DCC8020C943CCB8 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_VisualScripting_Antlr3_Runtime;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_VisualScripting_Antlr3_Runtime_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_VisualScripting_Antlr3_Runtime_CodeGenModule = 
 {
@@ -3408,7 +3409,7 @@ const Il2CppCodeGenModule g_Unity_VisualScripting_Antlr3_Runtime_CodeGenModule =
 	s_rgctxIndices,
 	15,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_VisualScripting_Antlr3_Runtime,
 	NULL, // module initializer,
 	NULL,
 	NULL,

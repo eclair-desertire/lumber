@@ -9617,6 +9617,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[259] =
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_InvokableCall_4_t2364CDDEAD7D89EC8A3DF50EDA200336E070465B },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_InvokableCall_4__ctor_m925C0D7AB0E0E91F76BEE4603727F999289C8274 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_CoreModule;
 static TypeDefinitionIndex s_staticConstructorsToRunAtStartup[9] = 
 {
 	3992,
@@ -9644,7 +9645,7 @@ const Il2CppCodeGenModule g_UnityEngine_CoreModule_CodeGenModule =
 	s_rgctxIndices,
 	259,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_CoreModule,
 	NULL, // module initializer,
 	s_staticConstructorsToRunAtStartup,
 	NULL,

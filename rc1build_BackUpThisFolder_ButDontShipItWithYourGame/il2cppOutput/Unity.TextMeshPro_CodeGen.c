@@ -6892,6 +6892,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[113] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_TMP_TextProcessingStack_1_SetDefault_mFF9116F731F3C1FE35E62013579CDBA5BB6C0C98 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Array_Resize_TisT_tEFDB8B1520E48ED22D3DA45F0204F72A29C2E246_mEA41A99CCB32776E22126F5733581D853D451A44 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_TextMeshPro;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule = 
 {
@@ -6907,7 +6908,7 @@ const Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule =
 	s_rgctxIndices,
 	113,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_TextMeshPro,
 	NULL, // module initializer,
 	NULL,
 	NULL,

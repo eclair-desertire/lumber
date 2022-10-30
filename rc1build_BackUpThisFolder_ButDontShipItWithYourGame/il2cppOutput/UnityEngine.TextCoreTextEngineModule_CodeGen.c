@@ -1544,6 +1544,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[10] =
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_TU5BU5D_tF671EEC26D8310D901066C4094937EF74C4BDB43 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Array_Resize_TisT_t221CFDD3BE5C61800E826B7B924C88413E6CFAD5_m6B12D3B6815FB2F9D9DF2EA23C4DFCA6BF547697 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_TextCoreTextEngineModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_TextCoreTextEngineModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_TextCoreTextEngineModule_CodeGenModule = 
 {
@@ -1559,7 +1560,7 @@ const Il2CppCodeGenModule g_UnityEngine_TextCoreTextEngineModule_CodeGenModule =
 	s_rgctxIndices,
 	10,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_TextCoreTextEngineModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

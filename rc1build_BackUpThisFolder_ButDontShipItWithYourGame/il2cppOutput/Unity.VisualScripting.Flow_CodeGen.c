@@ -13847,6 +13847,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[663] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Collection_1__ctor_m347E4E3702D4973C592B2E3359EE06C02AF8D6DA },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Collection_1_t1C52FD1BE85C9F64AF5F9DE82E9877AB6C8B4881 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_VisualScripting_Flow;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_VisualScripting_Flow_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_VisualScripting_Flow_CodeGenModule = 
 {
@@ -13862,7 +13863,7 @@ const Il2CppCodeGenModule g_Unity_VisualScripting_Flow_CodeGenModule =
 	s_rgctxIndices,
 	663,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_VisualScripting_Flow,
 	NULL, // module initializer,
 	NULL,
 	NULL,

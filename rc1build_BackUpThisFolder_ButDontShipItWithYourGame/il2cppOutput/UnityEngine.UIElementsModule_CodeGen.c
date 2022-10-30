@@ -23233,6 +23233,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[822] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_ValueAnimation_1_SetOwner_mB258A69723DC4F9072BDFB0DB179AD71F76240A0 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_ObjectPool_1__ctor_m231F8D1CC0D73AC3A58B04ACE58A2473C3245917 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_UIElementsModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_UIElementsModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_UIElementsModule_CodeGenModule = 
 {
@@ -23248,7 +23249,7 @@ const Il2CppCodeGenModule g_UnityEngine_UIElementsModule_CodeGenModule =
 	s_rgctxIndices,
 	822,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_UIElementsModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

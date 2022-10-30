@@ -3251,6 +3251,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[21] =
 	{ (Il2CppRGCTXDataType)5, (const void *)&g_rgctx_Enumerator_tC8309896333FA6CE9A7D192F2723F7B604A86114_IDisposable_Dispose_m3C902735BE731EE30AC1185E7AEF6ACE7A9D9CC7 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t4ED147A484F30BA57FB0C026DFEBE1D86DE03839 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_AdaptivePerformance;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_AdaptivePerformance_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_AdaptivePerformance_CodeGenModule = 
 {
@@ -3266,7 +3267,7 @@ const Il2CppCodeGenModule g_Unity_AdaptivePerformance_CodeGenModule =
 	s_rgctxIndices,
 	21,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_AdaptivePerformance,
 	NULL, // module initializer,
 	NULL,
 	NULL,

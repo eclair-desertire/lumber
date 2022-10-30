@@ -185,6 +185,7 @@ static const int32_t s_InvokerIndices[39] =
 	1946,
 	1960,
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_AudioModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AudioModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_AudioModule_CodeGenModule = 
 {
@@ -200,7 +201,7 @@ const Il2CppCodeGenModule g_UnityEngine_AudioModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_AudioModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

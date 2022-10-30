@@ -1716,6 +1716,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[41] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx__AndroidJNIHelper_GetFieldID_TisFieldType_tC112CF857F2F9A16A01117BD8DE4B420B806AB6D_mFA7B428C4344302ADCD1670CEB890B397DAD9227 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx__AndroidJNIHelper_GetSignature_TisReturnType_t9A95B9FC093A340C4D5AEABCB66770F89AE0048D_mE373542209BEBEDCBECCAB5C5B944D0778370DEC },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_AndroidJNIModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule = 
 {
@@ -1731,7 +1732,7 @@ const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule =
 	s_rgctxIndices,
 	41,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_AndroidJNIModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

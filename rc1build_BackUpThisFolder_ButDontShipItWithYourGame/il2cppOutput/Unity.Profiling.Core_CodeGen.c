@@ -223,6 +223,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[29] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_ProfilerMarker_3_End_m48CC24F9358A12EA215D6D953E7E8D3B2E7CA982 },
 	{ (Il2CppRGCTXDataType)1, (const void *)&g_rgctx_T_t1CDECE2708A360FFD06302D16DA301344EAA4938 },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_Profiling_Core;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_Profiling_Core_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_Profiling_Core_CodeGenModule = 
 {
@@ -238,7 +239,7 @@ const Il2CppCodeGenModule g_Unity_Profiling_Core_CodeGenModule =
 	s_rgctxIndices,
 	29,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_Profiling_Core,
 	NULL, // module initializer,
 	NULL,
 	NULL,

@@ -608,6 +608,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[12] =
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Func_1_tD410519654B9CA11E0B73C05333F283C303AF474 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Func_1_Invoke_m12D0FFCD951CB7503539F5F07B3029ECD9E505DF },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnity_AdaptivePerformance_Samsung_Android;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_AdaptivePerformance_Samsung_Android_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_AdaptivePerformance_Samsung_Android_CodeGenModule = 
 {
@@ -623,7 +624,7 @@ const Il2CppCodeGenModule g_Unity_AdaptivePerformance_Samsung_Android_CodeGenMod
 	s_rgctxIndices,
 	12,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnity_AdaptivePerformance_Samsung_Android,
 	NULL, // module initializer,
 	NULL,
 	NULL,

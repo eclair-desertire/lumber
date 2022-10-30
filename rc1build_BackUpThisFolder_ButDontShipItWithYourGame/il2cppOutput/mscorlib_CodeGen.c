@@ -42646,6 +42646,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[1064] =
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_ArrayPool_1_tB86E3577012FC8F8E898FAF0B54DA70EFB81913F },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_TU5BU5DU5BU5D_tD4F8851C323E944E6C7C43009E685F59A15AFFDC },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationmscorlib;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 const Il2CppCodeGenModule g_mscorlib_CodeGenModule = 
 {
@@ -42661,7 +42662,7 @@ const Il2CppCodeGenModule g_mscorlib_CodeGenModule =
 	s_rgctxIndices,
 	1064,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationmscorlib,
 	NULL, // module initializer,
 	NULL,
 	NULL,

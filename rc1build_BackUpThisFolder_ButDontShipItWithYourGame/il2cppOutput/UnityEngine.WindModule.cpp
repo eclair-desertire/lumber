@@ -19,6 +19,10 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 // UnityEngine.WindZone
 struct WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7;
 
+IL2CPP_EXTERN_C const RuntimeMethod* WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B_RuntimeMethod_var;
 
 
 IL2CPP_EXTERN_C_BEGIN
@@ -135,6 +139,13 @@ struct WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7  : public Component_t3
 // System.Single UnityEngine.WindZone::get_radius()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516 (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	ProfilerMethodSentry _profilerMethodSentry(WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516_RuntimeMethod_var);
 	typedef float (*WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516_ftn) (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7*);
 	static WindZone_get_radius_mCA754177573056EF9C677C83DBD9C2CBD4979516_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
@@ -145,6 +156,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WindZone_get_radius_mCA754177573056EF9C
 // System.Single UnityEngine.WindZone::get_windMain()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0 (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	ProfilerMethodSentry _profilerMethodSentry(WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0_RuntimeMethod_var);
 	typedef float (*WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0_ftn) (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7*);
 	static WindZone_get_windMain_m49480166CDE759C98498B951148535FCCED788C0_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
@@ -155,6 +173,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WindZone_get_windMain_m49480166CDE759C9
 // System.Void UnityEngine.WindZone::set_windMain(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7* __this, float ___value0, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	ProfilerMethodSentry _profilerMethodSentry(WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF_RuntimeMethod_var);
 	typedef void (*WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF_ftn) (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7*, float);
 	static WindZone_set_windMain_mECB9DF2D5BAB9FD545891C3409B36CC57605F2DF_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
@@ -164,6 +189,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindZone_set_windMain_mECB9DF2D5BAB9FD54
 // System.Void UnityEngine.WindZone::set_windTurbulence(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7* __this, float ___value0, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	ProfilerMethodSentry _profilerMethodSentry(WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B_RuntimeMethod_var);
 	typedef void (*WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B_ftn) (WindZone_t7946C428D1DA3C255DCDC832A39B871EDC1315A7*, float);
 	static WindZone_set_windTurbulence_m61C6D929BE93A628E05A3C6C3557FF660D58231B_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)

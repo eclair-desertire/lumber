@@ -1017,6 +1017,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[4] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeSliceUnsafeUtility_GetUnsafePtr_TisT_t39DCE47ECA5992BC2FE83C6275C4C3F7EA2FCB79_mC8791D6BD3F735D5E2CF9FDFC5D73C31862962B5 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_UnsafeUtility_SizeOf_TisT_t3C727C4B8BF62FF70A1F7AE9FB09653FEE9981D4_mAE766809D234C461EF4B196928321B67889141DF },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_UIElementsNativeModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_UIElementsNativeModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_UIElementsNativeModule_CodeGenModule = 
 {
@@ -1032,7 +1033,7 @@ const Il2CppCodeGenModule g_UnityEngine_UIElementsNativeModule_CodeGenModule =
 	s_rgctxIndices,
 	4,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_UIElementsNativeModule,
 	NULL, // module initializer,
 	NULL,
 	NULL,

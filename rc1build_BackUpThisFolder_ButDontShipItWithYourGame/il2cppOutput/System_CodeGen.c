@@ -4255,6 +4255,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[47] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_LinkedList_1_get_Count_m00D92A248A5513B9C324C4F8A7EEAAE4A1AB9A85 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t40ED5F405E4C66916984D6B18DAD11FB5460B70E },
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationSystem;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_System_CodeGenModule;
 const Il2CppCodeGenModule g_System_CodeGenModule = 
 {
@@ -4270,7 +4271,7 @@ const Il2CppCodeGenModule g_System_CodeGenModule =
 	s_rgctxIndices,
 	47,
 	s_rgctxValues,
-	NULL,
+	&g_DebuggerMetadataRegistrationSystem,
 	NULL, // module initializer,
 	NULL,
 	NULL,
